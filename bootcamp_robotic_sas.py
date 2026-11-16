@@ -10,11 +10,10 @@ def tambah(a, b):
     "Fungsi Penjumlahan"
     return a + b
 
-
+ 
 def kurang(a, b):
     "Fungsi Pengurangan"
     return a - b
-
 
 def kali(a, b):
     "Fungsi Perkalian"
