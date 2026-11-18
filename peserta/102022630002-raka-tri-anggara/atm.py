@@ -1,23 +1,17 @@
-NAMA_BANK = "ATM BANK RAKA"
+NAMA_BANK = "ATM BANK RAKA X BANK TOYYIB"
 MAKS_PERCOBAAN = 3
 
-# Dictionary data nasabah (PIN dan saldo)
 nasabah = {
     "pin": "123456",
     "saldo": 1500000,
 }
 
-# List riwayat transaksi
 mutasi = []
 
-
 def format_rupiah(nominal):
-    """Ubah angka menjadi format Rp 1.500.000."""
     return "Rp " + f"{nominal:,}".replace(",", ".")
 
-
 def baca_nominal(pesan):
-    """Minta input angka positif. Kembalikan None jika tidak valid."""
     teks = input(pesan).strip()
     if not teks.isdigit():
         print("Nominal harus berupa angka bulat positif.")
@@ -28,9 +22,7 @@ def baca_nominal(pesan):
         return None
     return nominal
 
-
 def verifikasi_pin():
-    """Login dengan maksimal 3 kali percobaan."""
     for percobaan in range(1, MAKS_PERCOBAAN + 1):
         pin = input("Masukkan PIN: ").strip()
         if pin == nasabah["pin"]:
@@ -42,10 +34,8 @@ def verifikasi_pin():
     print("Kartu diblokir karena 3 kali salah memasukkan PIN.")
     return False
 
-
 def cek_saldo():
     print(f"Saldo rekening Anda: {format_rupiah(nasabah['saldo'])}")
-
 
 def setor_tunai():
     nominal = baca_nominal("Nominal setor: Rp ")
@@ -54,7 +44,6 @@ def setor_tunai():
     nasabah["saldo"] += nominal
     mutasi.append(f"Setor  + {format_rupiah(nominal)}")
     print(f"Setor berhasil. Saldo sekarang: {format_rupiah(nasabah['saldo'])}")
-
 
 def tarik_tunai():
     nominal = baca_nominal("Nominal tarik: Rp ")
@@ -67,7 +56,6 @@ def tarik_tunai():
     mutasi.append(f"Tarik  - {format_rupiah(nominal)}")
     print(f"Tarik berhasil. Saldo sekarang: {format_rupiah(nasabah['saldo'])}")
 
-
 def riwayat_mutasi():
     if not mutasi:
         print("Belum ada transaksi.")
@@ -75,7 +63,6 @@ def riwayat_mutasi():
     print("--- Riwayat Mutasi ---")
     for nomor, catatan in enumerate(mutasi, start=1):
         print(f"{nomor}. {catatan}")
-
 
 def tampilkan_menu():
     print()
@@ -88,16 +75,13 @@ def tampilkan_menu():
     print("[4] Riwayat Mutasi")
     print("[0] Keluar")
 
-
 def main():
     print(f"Selamat datang di {NAMA_BANK}")
     if not verifikasi_pin():
         return
-
     while True:
         tampilkan_menu()
         pilihan = input("Pilih menu: ").strip()
-
         if pilihan == "1":
             cek_saldo()
         elif pilihan == "2":
