@@ -76,7 +76,7 @@ def riwayat_transaksi():
 
 print("===================================")
 print("       SELAMAT DATANG DI ATM       ")
-print("          BANK TOYYIB BOS           ")
+print("      BANK TOYYIB x BANK RAHFI     ")
 print("===================================")
 
 while percobaan < maksimal_percobaan:
