@@ -75,7 +75,6 @@ tugas2 = TugasKuliah("Laporan Praktikum", "26 November", 3, "Algoritma & Pemrogr
 
 # Instance method & Special method (__str__)
 print("=== DAFTAR TUGAS ===")
-print(tugas1)
 tugas1.tampil_info()
 tugas2.tampil_info()
 
