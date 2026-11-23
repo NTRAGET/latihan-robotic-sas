@@ -1,5 +1,6 @@
 
 nasabah = {"pin": "123456", "saldo": 1500000}
+nasabah2 = {"pin": "654321", "saldo": 2000000}
 
 
 mutasi = []
@@ -53,9 +54,13 @@ print("=== SELAMAT DATANG DI BANK SAS ===")
 percobaan = 0
 login_berhasil = False
 
-while percobaan < 3:
+for percobaan in range(3):
   pin_input = input("Masukkan PIN Anda: ")
   if pin_input == nasabah["pin"]:
+    login_berhasil = True
+    print("Login berhasil!")
+    break
+  elif pin_input == nasabah2["pin"]:
     login_berhasil = True
     print("Login berhasil!")
     break
