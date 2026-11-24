@@ -44,7 +44,7 @@ class Tugas(Kegiatan):
 
     # Special method (__str__ & __add__)
     def __str__(self):
-        return f"{self.nama_tugas} (Deadline: {self.deadline})"
+        return f"{self.nama_tugas} (Deadline: {self.deadline} )"
 
     def __add__(self, tugas_lain):
         # Menjumlahkan total sisa hari dua tugas
@@ -75,6 +75,10 @@ tugas2 = TugasKuliah("Laporan Praktikum", "26 November", 3, "Algoritma & Pemrogr
 
 # Instance method & Special method (__str__)
 print("=== DAFTAR TUGAS ===")
+print(tugas1)
+print(tugas2)
+
+print("\n=== INFORMASI TUGAS ===")
 tugas1.tampil_info()
 tugas2.tampil_info()
 
